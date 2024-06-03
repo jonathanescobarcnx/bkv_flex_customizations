@@ -247,8 +247,7 @@
           "exampleQueueName": {
             "require_disposition": true,
             "dispositions": [
-              "Promotional Sale",
-              "Renewal"
+              "Promotional Sale"
             ],
             "text_attributes": [],
             "select_attributes": []
