@@ -239,11 +239,6 @@
         "global": {
           "require_disposition": false,
           "dispositions": [
-            "Resolved",
-            "Not Resolved",
-            "Follow-up Required",
-            "Escalation",
-            "Wrong Department"
           ],
           "text_attributes": [],
           "select_attributes": []
@@ -427,6 +422,11 @@
           "side_nav_hover_background": "rgb(225, 227, 234)"
         },
         "component_theme_overrides": {}
+      },
+      "hubspot_crm": {
+        "enabled": false,
+        "url": "https://app.hubspot.com/contacts/23498454/contacts/list/view/all/",
+        "url_tab_title": "HubSpot"
       }
     }
   }
