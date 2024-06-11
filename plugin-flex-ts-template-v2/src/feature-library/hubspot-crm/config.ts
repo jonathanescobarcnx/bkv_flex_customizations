@@ -5,6 +5,7 @@ const {
    enabled = false,
    url_tab_title = '',
    url = '',
+   url_when_contact_not_found = '',
 } = (getFeatureFlags()?.features?.hubspot_crm as HubspotCrmConfig) || {};
 
 export const isFeatureEnabled = () => {
@@ -13,6 +14,10 @@ export const isFeatureEnabled = () => {
 
 export const getUrl = () => {
   return url;
+};
+
+export const displayUrlWhenContactNotFound = () => {
+  return url_when_contact_not_found;
 };
 
 export const getUrlTabTitle = () => {

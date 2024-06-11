@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { IconButton, ITask } from '@twilio/flex-ui';
 
 import { IFrameRefreshButtonStyledDiv } from './IFrameCRMTab.Styles';
-import { getUrl } from '../../config';
+import { getUrl,displayUrlWhenContactNotFound } from '../../config';
 import { replaceStringAttributes } from '../../../../utils/helpers';
 
 export interface Props {
@@ -17,7 +17,7 @@ export const IFrameCRMTab = ({ task }: Props) => {
     setIframeKey(Math.floor(Math.random() * (Number.MAX_SAFE_INTEGER + 1)));
   };
 
-  const url = getUrl();
+  const url = replaceStringAttributes(task.attributes.contactId != null && task.attributes.contactId !== '' ? getUrl() : displayUrlWhenContactNotFound(), task);
 
   return (
     <>

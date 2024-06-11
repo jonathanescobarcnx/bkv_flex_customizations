@@ -238,8 +238,7 @@
         "enable_notes": true,
         "global": {
           "require_disposition": false,
-          "dispositions": [
-          ],
+          "dispositions": [],
           "text_attributes": [],
           "select_attributes": []
         },
@@ -424,8 +423,14 @@
       },
       "hubspot_crm": {
         "enabled": false,
-        "url": "https://app.hubspot.com/contacts/23498454/contacts/list/view/all/",
+        "url": "https://app.hubspot.com/contacts/23498454/contact/{{task.contactId}}",
+        "url_when_contact_not_found": "https://app.hubspot.com/contacts/23498454/contacts/list/view/all/",
         "url_tab_title": "HubSpot"
+      },
+      "zeus_crm": {
+        "enabled": true,
+        "url": "https://bkvcontainerzeus-dev.azureedge.net/bkv-disposition/form?origen=twilio&interactionId={{task.interactionId}}&taskSid={{task.sid}}&channel={{task.taskChannelUniqueName}}&reservationSid={{task.reservationSid}}&queue={{task.queueName}}&userId={{worker.full_name}}",
+        "url_tab_title": "Zeus Tipification"
       }
     }
   }
