@@ -5,7 +5,7 @@ import * as Flex from '@twilio/flex-ui';
 import { IFrameRefreshButtonStyledDiv } from './IFrameCRMTab.Styles';
 import { getUrl,getConversationAttributeKey } from '../../config';
 import { replaceStringAttributes } from '../../../../utils/helpers';
-import * as FlexInsightsHelper from '../../helpers/flexInsightsHelper';
+import * as FlexInsightsHelper from '../../helpers/flexReportHelper';
 
 export interface Props {
   task: any;
