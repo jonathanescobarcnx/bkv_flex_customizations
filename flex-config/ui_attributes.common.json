@@ -239,7 +239,13 @@
         "global": {
           "require_disposition": false,
           "dispositions": [],
-          "text_attributes": [],
+          "text_attributes": [
+            {
+            "form_label" : "Account Number",
+            "conversation_attribute": "case",
+            "required": false
+            }
+          ],
           "select_attributes": []
         },
         "per_queue": {
@@ -422,7 +428,7 @@
         "component_theme_overrides": {}
       },
       "hubspot_crm": {
-        "enabled": false,
+        "enabled": true,
         "url": "https://app.hubspot.com/contacts/23498454/contact/{{task.contactId}}",
         "url_when_contact_not_found": "https://app.hubspot.com/contacts/23498454/contacts/list/view/all/",
         "url_tab_title": "HubSpot"
