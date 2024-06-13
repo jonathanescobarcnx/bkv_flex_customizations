@@ -430,7 +430,8 @@
       "zeus_crm": {
         "enabled": true,
         "url": "https://bkvcontainerzeus-dev.azureedge.net/bkv-disposition/form?origen=twilio&interactionId={{task.interactionId}}&taskSid={{task.sid}}&channel={{task.taskChannelUniqueName}}&reservationSid={{task.reservationSid}}&queue={{task.queueName}}&userId={{worker.full_name}}",
-        "url_tab_title": "Zeus Tipification"
+        "url_tab_title": "Zeus Tipification",
+        "conversation_attribute_key": "conversation_attribute_1"
       }
     }
   }

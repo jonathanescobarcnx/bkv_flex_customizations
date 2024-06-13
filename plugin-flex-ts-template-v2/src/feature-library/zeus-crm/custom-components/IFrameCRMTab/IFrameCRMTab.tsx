@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
-import { IconButton, ITask } from '@twilio/flex-ui';
+import { IconButton } from '@twilio/flex-ui';
 import * as Flex from '@twilio/flex-ui';
 
 import { IFrameRefreshButtonStyledDiv } from './IFrameCRMTab.Styles';
-import { getUrl } from '../../config';
+import { getUrl,getConversationAttributeKey } from '../../config';
 import { replaceStringAttributes } from '../../../../utils/helpers';
-import * as FlexInsightsHelper from '../../helpers/FlexInsightsHelper';
+import * as FlexInsightsHelper from '../../helpers/flexInsightsHelper';
 
 export interface Props {
   task: any;
@@ -23,18 +23,19 @@ export const IFrameCRMTab = ({ task }: Props) => {
   const { channelSid, direction, call_sid } = attributes;
 
   let configUrl = getUrl();
+  const conversationAttributeKey = getConversationAttributeKey();
 
   console.info("Zeus URL:",configUrl)
   console.log("Task:",task)
   
   if (Flex.TaskHelper.isChatBasedTask(task)){
     configUrl = configUrl.replace('{{task.interactionId}}', channelSid);
-    FlexInsightsHelper.setInteractionIdAttribute(taskSid, channelSid);
+    FlexInsightsHelper.setInteractionIdAttribute(taskSid,conversationAttributeKey, channelSid);
   }
   else {
     const interactionId = direction === 'outbound' ? callSid : call_sid;
     configUrl = configUrl.replace('{{task.interactionId}}', interactionId);
-    FlexInsightsHelper.setInteractionIdAttribute(taskSid, interactionId);
+    FlexInsightsHelper.setInteractionIdAttribute(taskSid,conversationAttributeKey, interactionId);
   }
 
   configUrl = configUrl.replace('{{task.sid}}', taskSid);
