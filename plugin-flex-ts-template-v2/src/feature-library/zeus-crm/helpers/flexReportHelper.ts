@@ -13,9 +13,9 @@ export const setInteractionIdAttribute = async (
   };
 
   try {
-    await TaskRouterService.updateTaskAttributes(taskSid, newAttributes,true);
+    const response = await TaskRouterService.updateTaskAttributes(taskSid, newAttributes,false);
+    console.log(`Set ${attributeKey} attribute for ${taskSid} to ${value} (interactionId), response:`, response);
   } catch (error) {
     console.error(`Failed to set ${attributeKey} attribute for ${taskSid} to ${value} (interactionId)` , error);
   }
-  console.log(`Set ${attributeKey} attribute for ${taskSid} to ${value}(interactionId)`, newAttributes);
 };
